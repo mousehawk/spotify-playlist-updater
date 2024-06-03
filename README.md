@@ -20,3 +20,5 @@ An automatic playlist updater using Spotify API and Authorization code flow in P
 * 0.2 
     * Conditional logic & timestamps added
 
+* 0.3
+    * Added a counter
