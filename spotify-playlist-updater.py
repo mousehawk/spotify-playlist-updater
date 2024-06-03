@@ -13,13 +13,13 @@ def func():
     scope = 'playlist-modify-public ugc-image-upload'
 
     # Spotify Username
-    username = '00000000000'
+    username = 'username'
 
     # Spotify Developer App Client ID and Secret ID
-    SPOTIPY_CLIENT_ID = '00000000000000000000000000000000'
-    SPOTIPY_CLIENT_SECRET = '00000000000000000000000000000000'
+    SPOTIPY_CLIENT_ID = 'clientid'
+    SPOTIPY_CLIENT_SECRET = 'clientsecret'
 
-    token = util.prompt_for_user_token(username,scope,SPOTIPY_CLIENT_ID,SPOTIPY_CLIENT_SECRET,redirect_uri='http://your-url.com',cache_path='tokens.txt')
+    token = util.prompt_for_user_token(username,scope,SPOTIPY_CLIENT_ID,SPOTIPY_CLIENT_SECRET,redirect_uri='http://yourdomain.com',cache_path='tokens.txt')
     sp = spotipy.Spotify(auth=token)
 
     # Playlist Data
@@ -48,7 +48,7 @@ def func():
         g.close()
         
         # Restore the thumbnail, title & description
-        with open("C:\\Users\\Username\\Path\\To\\thumbnail.jpg", "rb") as img_file:
+        with open("C:\\Users\\Username\\Documents\\spotify-playlist-updater\\Data\\thumbnail.jpg", "rb") as img_file:
          myimage = base64.b64encode(img_file.read())
         image_b64 = myimage
         sp.playlist_upload_cover_image(playlist_id=id, image_b64 = myimage)
